@@ -8,8 +8,11 @@ function onReady(fn) {
 }
 
 async function api(ruta, opciones = {}) {
+  const token = await Auth.getValidToken();
+  const headers = { "Content-Type": "application/json" };
+  if (token) headers["Authorization"] = `Bearer ${token}`;
   const resp = await fetch(ruta, {
-    headers: { "Content-Type": "application/json" },
+    headers,
     ...opciones,
   });
   const datos = await resp.json().catch(() => ({}));
@@ -69,8 +72,84 @@ onReady(() => {
     const boton = e.target.closest(".tab");
     if (boton) cambiarTab(boton.dataset.tab);
   });
-  $("appContainer").hidden = false;
-  inicializarApp();
+
+  // Auth state listener
+  Auth.onAuthChange(async (user) => {
+    const authScreen = $("authScreen");
+    const appContainer = $("appContainer");
+    const userEmail = $("userEmail");
+    const btnLogout = $("btnLogout");
+
+    if (user) {
+      authScreen.hidden = true;
+      appContainer.hidden = false;
+      userEmail.textContent = user.email;
+      userEmail.hidden = false;
+      btnLogout.hidden = false;
+      await inicializarApp();
+    } else {
+      authScreen.hidden = false;
+      appContainer.hidden = true;
+      userEmail.hidden = true;
+      btnLogout.hidden = true;
+    }
+  });
+
+  // Auth form handler
+  $("authForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const email = $("authEmail").value.trim();
+    const pass = $("authPass").value;
+    const errorEl = $("authError");
+    const submitBtn = $("authSubmit");
+    const isSignup = submitBtn.dataset.mode === "signup";
+
+    try {
+      submitBtn.disabled = true;
+      submitBtn.textContent = isSignup ? "Creando cuenta..." : "Entrando...";
+      errorEl.hidden = true;
+      if (isSignup) await Auth.signup(email, pass);
+      else await Auth.login(email, pass);
+    } catch (err) {
+      errorEl.textContent = err.message;
+      errorEl.hidden = false;
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = isSignup ? "Registrarse" : "Entrar";
+    }
+  });
+
+  // Toggle login/signup
+  $("authToggle").addEventListener("click", () => {
+    const isSignup = $("authSubmit").dataset.mode === "signup";
+    const title = $("authTitle");
+    const subtitle = $("authSubtitle");
+    const submitBtn = $("authSubmit");
+    const switchText = $("authSwitchText");
+    const toggleBtn = $("authToggle");
+
+    if (isSignup) {
+      title.textContent = "Iniciar sesión";
+      subtitle.textContent = "Accede para usar la app";
+      submitBtn.textContent = "Entrar";
+      submitBtn.dataset.mode = "login";
+      switchText.textContent = "¿No tienes cuenta?";
+      toggleBtn.textContent = "Regístrate";
+    } else {
+      title.textContent = "Crear cuenta";
+      subtitle.textContent = "Regístrate para acceder";
+      submitBtn.textContent = "Registrarse";
+      submitBtn.dataset.mode = "signup";
+      switchText.textContent = "¿Ya tienes cuenta?";
+      toggleBtn.textContent = "Inicia sesión";
+    }
+    $("authError").hidden = true;
+  });
+
+  // Logout
+  $("btnLogout").addEventListener("click", () => {
+    Auth.logout();
+  });
 });
 
 const inpDias = $("inpDias");

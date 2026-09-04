@@ -8,7 +8,37 @@
 </head>
 <body>
 
-<div id="appContainer">
+<!-- PANTALLA LOGIN/REGISTER -->
+<div id="authScreen" class="auth-screen">
+  <div class="auth-card">
+    <div class="logo">
+      <span>Personal<b>Trainer</b></span>
+    </div>
+    <h2 id="authTitle">Iniciar sesión</h2>
+    <p class="auth-subtitle" id="authSubtitle">Accede para usar la app</p>
+
+    <form id="authForm">
+      <label class="campo">
+        <span>Email</span>
+        <input id="authEmail" type="email" placeholder="tu@email.com" required autocomplete="email">
+      </label>
+      <label class="campo">
+        <span>Contraseña</span>
+        <input id="authPass" type="password" placeholder="••••••••" required autocomplete="current-password" minlength="6">
+      </label>
+      <p id="authError" class="auth-error" hidden></p>
+      <button type="submit" class="boton primario ancho" id="authSubmit" data-mode="login">Entrar</button>
+    </form>
+
+    <p class="auth-switch">
+      <span id="authSwitchText">¿No tienes cuenta?</span>
+      <button type="button" id="authToggle" class="enlace">Regístrate</button>
+    </p>
+  </div>
+</div>
+
+<!-- APP PRINCIPAL (oculta hasta autenticar) -->
+<div id="appContainer" hidden>
 
 <header class="topbar">
   <div class="logo">
@@ -26,8 +56,9 @@
 
   <div class="sesion">
     <span id="relojSesion" class="reloj-sesion" hidden>00:00</span>
+    <span id="userEmail" class="user-email" hidden></span>
     <button id="btnTheme" class="boton fantasma" aria-label="Cambiar tema" title="Alternar modo claro/oscuro"></button>
-    <button id="btnSesion" class="boton fantasma">Iniciar sesión</button>
+    <button id="btnLogout" class="boton fantasma" hidden>Cerrar sesión</button>
   </div>
 </header>
 
@@ -227,6 +258,8 @@
 
 </div> <!-- /appContainer -->
 
+<script src="/js/firebase-config.js"></script>
+<script src="/js/auth.js"></script>
 <script src="/js/app.js"></script>
 </body>
 </html>

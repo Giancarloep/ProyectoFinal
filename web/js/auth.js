@@ -1,4 +1,4 @@
-// Auth Firebase (frontend)
+// Auth Firebase (frontend) - solo login/register
 const Auth = (() => {
   const API_KEY = (window.FIREBASE_CONFIG && window.FIREBASE_CONFIG.apiKey) || "AIzaSyDkFL-rIPJP9gK9uUnSenAyYT-ZWtMRrds";
   const SIGNUP_URL = `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${API_KEY}`;
@@ -20,10 +20,7 @@ const Auth = (() => {
       body: JSON.stringify(body)
     });
     const data = await res.json();
-    if (!res.ok) {
-      const msg = data.error?.message || data.error?.errors?.[0]?.message || JSON.stringify(data.error) || "Error de auth";
-      throw new Error(msg);
-    }
+    if (!res.ok) throw new Error(data.error?.message || "Error de auth");
     return data;
   }
 
@@ -95,11 +92,5 @@ const Auth = (() => {
     return () => { listeners = listeners.filter(l => l !== fn); };
   }
 
-  async function ensureToken() {
-    const token = await getValidToken();
-    if (!token) throw new Error("No autenticado");
-    return token;
-  }
-
-  return { signup, login, logout, getValidToken, ensureToken, getCurrentUser, onAuthChange };
+  return { signup, login, logout, getValidToken, getCurrentUser, onAuthChange };
 })();
