@@ -1,0 +1,643 @@
+{
+  "fuente": "Imágenes: free-exercise-db (github.com/yuhonas/free-exercise-db, dominio público)",
+  "ejercicios": {
+    "Sentadilla": {
+      "musculo": "Cuádriceps",
+      "equipo": "Barra",
+      "pasos": [
+        "Coloca la barra sobre los trapecios y separa los pies al ancho de los hombros.",
+        "Baja flexionando caderas y rodillas hasta que los muslos queden paralelos al suelo.",
+        "Mantén la espalda recta y el pecho arriba durante todo el movimiento.",
+        "Empuja con los talones para volver a la posición inicial."
+      ],
+      "imagenes": [
+        "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Barbell_Squat/0.jpg",
+        "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Barbell_Squat/1.jpg"
+      ]
+    },
+    "Prensa de piernas": {
+      "musculo": "Cuádriceps",
+      "equipo": "Gimnasio",
+      "pasos": [
+        "Siéntate en la máquina y coloca los pies al ancho de hombros en la plataforma.",
+        "Baja la plataforma flexionando las rodillas hasta unos 90 grados.",
+        "No despegues la zona lumbar del respaldo.",
+        "Empuja hasta extender las piernas sin bloquear las rodillas."
+      ],
+      "imagenes": [
+        "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Leg_Press/0.jpg",
+        "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Leg_Press/1.jpg"
+      ]
+    },
+    "Zancadas": {
+      "musculo": "Cuádriceps",
+      "equipo": "Mancuernas",
+      "pasos": [
+        "De pie, con una mancuerna en cada mano, da un paso largo al frente.",
+        "Baja hasta que ambas rodillas formen unos 90 grados.",
+        "El torso permanece vertical y la rodilla trasera casi toca el suelo.",
+        "Empuja con el talón adelantado para regresar y alterna de pierna."
+      ],
+      "imagenes": [
+        "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Dumbbell_Lunges/0.jpg",
+        "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Dumbbell_Lunges/1.jpg"
+      ]
+    },
+    "Extension de cuadriceps": {
+      "musculo": "Cuádriceps",
+      "equipo": "Gimnasio",
+      "pasos": [
+        "Siéntate en la máquina con los tobillos bajo el rodillo.",
+        "Extiende las piernas hasta contraer el cuádriceps.",
+        "Pausa un segundo arriba y baja controlando el peso."
+      ],
+      "imagenes": [
+        "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Leg_Extensions/0.jpg",
+        "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Leg_Extensions/1.jpg"
+      ]
+    },
+    "Peso muerto rumano": {
+      "musculo": "Femoral",
+      "equipo": "Barra / mancuernas",
+      "pasos": [
+        "Sujeta la barra frente a ti, de pie, con las rodillas ligeramente flexionadas.",
+        "Lleva la cadera hacia atrás y baja el peso rozando los muslos.",
+        "Siente el estiramiento del femoral sin redondear la espalda.",
+        "Extiende la cadera para subir apretando los glúteos."
+      ],
+      "imagenes": [
+        "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Romanian_Deadlift/0.jpg",
+        "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Romanian_Deadlift/1.jpg"
+      ]
+    },
+    "Curl femoral": {
+      "musculo": "Femoral",
+      "equipo": "Gimnasio",
+      "pasos": [
+        "Boca abajo en la máquina, con los tobillos bajo el rodillo.",
+        "Flexiona las rodillas llevando los talones hacia los glúteos.",
+        "Baja lentamente sin soltar la tensión."
+      ],
+      "imagenes": [
+        "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Lying_Leg_Curls/0.jpg",
+        "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Lying_Leg_Curls/1.jpg"
+      ]
+    },
+    "Hiperextensiones": {
+      "musculo": "Femoral",
+      "equipo": "Peso corporal",
+      "pasos": [
+        "Apóyate en el banco de hiperextensiones con los talones fijos.",
+        "Baja el torso controlando y sube hasta alinear espalda y piernas.",
+        "No subas más allá de la línea recta para proteger la zona lumbar."
+      ],
+      "imagenes": [
+        "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Hyperextensions_Back_Extensions/0.jpg",
+        "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Hyperextensions_Back_Extensions/1.jpg"
+      ]
+    },
+    "Puente femoral": {
+      "musculo": "Femoral",
+      "equipo": "Peso corporal",
+      "pasos": [
+        "Túmbate boca arriba con una pierna flexionada y la otra extendida.",
+        "Empuja con el talón elevando la cadera del suelo.",
+        "Aprieta femoral y glúteo arriba, y baja sin tocar el suelo."
+      ],
+      "imagenes": [
+        "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Single_Leg_Glute_Bridge/0.jpg",
+        "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Single_Leg_Glute_Bridge/1.jpg"
+      ]
+    },
+    "Hip thrust": {
+      "musculo": "Glúteos",
+      "equipo": "Barra / mancuernas",
+      "pasos": [
+        "Apoya la parte alta de la espalda en un banco con el peso sobre la cadera.",
+        "Empuja con los talones hasta alinear tronco y muslos.",
+        "Aprieta los glúteos un segundo arriba y baja controlando."
+      ],
+      "imagenes": [
+        "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Barbell_Hip_Thrust/0.jpg",
+        "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Barbell_Hip_Thrust/1.jpg"
+      ]
+    },
+    "Patada de gluteo": {
+      "musculo": "Glúteos",
+      "equipo": "Peso corporal",
+      "pasos": [
+        "En cuadrupedia, lleva una pierna hacia atrás y arriba.",
+        "Aprieta el glúteo en el punto más alto sin arquear la lumbar.",
+        "Baja controlando y alterna de pierna."
+      ],
+      "imagenes": [
+        "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Glute_Kickback/0.jpg",
+        "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Glute_Kickback/1.jpg"
+      ]
+    },
+    "Puente de gluteos": {
+      "musculo": "Glúteos",
+      "equipo": "Peso corporal",
+      "pasos": [
+        "Boca arriba, rodillas flexionadas y pies planos en el suelo.",
+        "Eleva la cadera apretando los glúteos hasta alinear el cuerpo.",
+        "Baja despacio sin apoyar por completo."
+      ],
+      "imagenes": [
+        "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Butt_Lift_Bridge/0.jpg",
+        "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Butt_Lift_Bridge/1.jpg"
+      ]
+    },
+    "Press banca": {
+      "musculo": "Pecho",
+      "equipo": "Gimnasio",
+      "pasos": [
+        "Túmbate en el banco y sujeta la barra algo más ancho que los hombros.",
+        "Baja la barra al pecho controlando, con los codos a unos 45 grados.",
+        "Toca suavemente el pecho y empuja hasta extender los brazos."
+      ],
+      "imagenes": [
+        "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Barbell_Bench_Press_-_Medium_Grip/0.jpg",
+        "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Barbell_Bench_Press_-_Medium_Grip/1.jpg"
+      ]
+    },
+    "Press inclinado con mancuerna": {
+      "musculo": "Pecho",
+      "equipo": "Mancuernas",
+      "pasos": [
+        "Banco a 30-45 grados, mancuernas a la altura del pecho.",
+        "Empuja hacia arriba juntando suavemente las mancuernas.",
+        "Baja controlando hasta sentir el estiramiento en el pecho."
+      ],
+      "imagenes": [
+        "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Incline_Dumbbell_Press/0.jpg",
+        "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Incline_Dumbbell_Press/1.jpg"
+      ]
+    },
+    "Fondos en paralelas": {
+      "musculo": "Pecho",
+      "equipo": "Peso corporal",
+      "pasos": [
+        "Súbelas a las paralelas con los brazos extendidos e inclina el torso al frente.",
+        "Baja hasta que los hombros queden a la altura de los codos.",
+        "Empuja para subir sin bloquear bruscamente los codos."
+      ],
+      "imagenes": [
+        "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Dips_-_Chest_Version/0.jpg",
+        "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Dips_-_Chest_Version/1.jpg"
+      ]
+    },
+    "Flexiones": {
+      "musculo": "Pecho",
+      "equipo": "Peso corporal",
+      "pasos": [
+        "Manos en el suelo algo más ancho que los hombros, cuerpo en línea.",
+        "Baja hasta que el pecho casi toque el suelo.",
+        "Empuja fuerte para subir manteniendo el abdomen firme."
+      ],
+      "imagenes": [
+        "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Push-Up_Wide/0.jpg",
+        "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Push-Up_Wide/1.jpg"
+      ]
+    },
+    "Flexiones declinadas": {
+      "musculo": "Pecho",
+      "equipo": "Peso corporal",
+      "pasos": [
+        "Apoya los pies en un banco y las manos en el suelo.",
+        "Baja el pecho controlando manteniendo el cuerpo recto.",
+        "Sube empujando fuerte: la inclinación carga más el pecho superior."
+      ],
+      "imagenes": [
+        "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Decline_Push-Up/0.jpg",
+        "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Decline_Push-Up/1.jpg"
+      ]
+    },
+    "Cruce de cables": {
+      "musculo": "Pecho",
+      "equipo": "Gimnasio",
+      "pasos": [
+        "Con la polea alta, avanza un paso y sujeta un cable en cada mano.",
+        "Junta las manos al frente de la cadera con los codos ligeramente flexionados.",
+        "Abre de nuevo controlando hasta sentir el estiramiento."
+      ],
+      "imagenes": [
+        "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Cable_Crossover/0.jpg",
+        "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Cable_Crossover/1.jpg"
+      ]
+    },
+    "Aperturas con mancuerna": {
+      "musculo": "Pecho",
+      "equipo": "Mancuernas",
+      "pasos": [
+        "Túmbate en banco plano con una mancuerna por mano y brazos extendidos al frente.",
+        "Abre los brazos en arco amplio con los codos semiflexionados.",
+        "Regresa describiendo un arco hasta juntar las mancuernas."
+      ],
+      "imagenes": [
+        "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Dumbbell_Flyes/0.jpg",
+        "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Dumbbell_Flyes/1.jpg"
+      ]
+    },
+    "Dominadas": {
+      "musculo": "Espalda",
+      "equipo": "Barra fija",
+      "pasos": [
+        "Cuelga de la barra con agarre prono algo más ancho que los hombros.",
+        "Sube llevando el pecho hacia la barra sin balancearte.",
+        "Baja controlando hasta extender por completo los brazos."
+      ],
+      "imagenes": [
+        "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Pullups/0.jpg",
+        "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Pullups/1.jpg"
+      ]
+    },
+    "Remo con barra": {
+      "musculo": "Espalda",
+      "equipo": "Gimnasio",
+      "pasos": [
+        "Inclina el torso unos 45 grados con la espalda recta y la barra colgando.",
+        "Lleva la barra al abdomen juntando las escápulas.",
+        "Baja controlando sin redondear la espalda."
+      ],
+      "imagenes": [
+        "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Bent_Over_Barbell_Row/0.jpg",
+        "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Bent_Over_Barbell_Row/1.jpg"
+      ]
+    },
+    "Jalon al pecho": {
+      "musculo": "Espalda",
+      "equipo": "Gimnasio",
+      "pasos": [
+        "Siéntate y sujeta la barra con agarre ancho.",
+        "Lleva la barra a la parte alta del pecho abriendo los codos.",
+        "Sube controlando sin soltar de golpe la pila de pesas."
+      ],
+      "imagenes": [
+        "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Wide-Grip_Lat_Pulldown/0.jpg",
+        "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Wide-Grip_Lat_Pulldown/1.jpg"
+      ]
+    },
+    "Remo con mancuerna": {
+      "musculo": "Espalda",
+      "equipo": "Mancuernas",
+      "pasos": [
+        "Apoya una rodilla y una mano en el banco, espalda paralela al suelo.",
+        "Rema la mancuerna hacia la cadera pegando el codo al cuerpo.",
+        "Baja estirando bien la espalda al final de cada repetición."
+      ],
+      "imagenes": [
+        "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/One-Arm_Dumbbell_Row/0.jpg",
+        "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/One-Arm_Dumbbell_Row/1.jpg"
+      ]
+    },
+    "Remo invertido": {
+      "musculo": "Espalda",
+      "equipo": "Peso corporal",
+      "pasos": [
+        "Colócate bajo una barra fija a la altura de la cadera, con el cuerpo recto.",
+        "Tira del pecho hacia la barra juntando las escápulas.",
+        "Baja despacio; cuanto más horizontal el cuerpo, más difícil."
+      ],
+      "imagenes": [
+        "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Inverted_Row/0.jpg",
+        "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Inverted_Row/1.jpg"
+      ]
+    },
+    "Superman espalda": {
+      "musculo": "Espalda",
+      "equipo": "Peso corporal",
+      "pasos": [
+        "Boca abajo, con brazos y piernas estirados.",
+        "Eleva a la vez brazos, pecho y piernas.",
+        "Aguanta 2 segundos arriba y baja controlando."
+      ],
+      "imagenes": [
+        "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Superman/0.jpg",
+        "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Superman/1.jpg"
+      ]
+    },
+    "Pullover en polea": {
+      "musculo": "Espalda",
+      "equipo": "Gimnasio",
+      "pasos": [
+        "De frente a la polea alta, sujeta la manija con los brazos casi rectos.",
+        "Lleva la manija a los muslos con los brazos extendidos.",
+        "Sube controlando sintiendo el trabajo en la espalda."
+      ],
+      "imagenes": [
+        "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Straight-Arm_Dumbbell_Pullover/0.jpg",
+        "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Straight-Arm_Dumbbell_Pullover/1.jpg"
+      ]
+    },
+    "Press militar": {
+      "musculo": "Hombro",
+      "equipo": "Gimnasio",
+      "pasos": [
+        "De pie, barra a la altura de las clavículas con agarre algo más ancho que los hombros.",
+        "Empuja la barra sobre la cabeza hasta extender los brazos.",
+        "Baja controlando hasta las clavículas sin arquear la lumbar."
+      ],
+      "imagenes": [
+        "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Standing_Military_Press/0.jpg",
+        "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Standing_Military_Press/1.jpg"
+      ]
+    },
+    "Press Arnold": {
+      "musculo": "Hombro",
+      "equipo": "Mancuernas",
+      "pasos": [
+        "Sentado, mancuernas al frente con las palmas mirando hacia ti.",
+        "Empuja girando las muñecas hasta que las palmas miren al frente.",
+        "Baja invirtiendo el giro de forma controlada."
+      ],
+      "imagenes": [
+        "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Arnold_Dumbbell_Press/0.jpg",
+        "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Arnold_Dumbbell_Press/1.jpg"
+      ]
+    },
+    "Elevaciones laterales": {
+      "musculo": "Hombro",
+      "equipo": "Mancuernas",
+      "pasos": [
+        "De pie, mancuernas a los lados con los codos ligeramente flexionados.",
+        "Sube los brazos laterales hasta la altura de los hombros.",
+        "Baja despacio sin balancear el torso."
+      ],
+      "imagenes": [
+        "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Side_Lateral_Raise/0.jpg",
+        "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Side_Lateral_Raise/1.jpg"
+      ]
+    },
+    "Face pull": {
+      "musculo": "Hombro",
+      "equipo": "Mancuernas / polea",
+      "pasos": [
+        "Coloca la polea a la altura de la cara con una cuerda.",
+        "Tira de la cuerda hacia la cara separando los extremos.",
+        "Con los codos altos, aprieta la parte trasera del hombro y vuelve controlando."
+      ],
+      "imagenes": [
+        "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Face_Pull/0.jpg",
+        "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Face_Pull/1.jpg"
+      ]
+    },
+    "Pajaros": {
+      "musculo": "Hombro",
+      "equipo": "Mancuernas",
+      "pasos": [
+        "Sentado e inclinado al frente, con el pecho casi sobre los muslos.",
+        "Con las mancuernas bajo el cuerpo, sube los brazos laterales con los codos semiflexionados.",
+        "Aprieta la parte trasera del hombro y baja controlando."
+      ],
+      "imagenes": [
+        "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Seated_Bent-Over_Rear_Delt_Raise/0.jpg",
+        "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Seated_Bent-Over_Rear_Delt_Raise/1.jpg"
+      ]
+    },
+    "Flexiones pike": {
+      "musculo": "Hombro",
+      "equipo": "Peso corporal",
+      "pasos": [
+        "Desde la posición de flexión, camina los pies hacia las manos formando una V invertida.",
+        "Baja la cabeza hacia el suelo flexionando los codos.",
+        "Empuja para extender los brazos: la carga cae sobre los hombros."
+      ],
+      "imagenes": [
+        "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Handstand_Push-Ups/0.jpg",
+        "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Handstand_Push-Ups/1.jpg"
+      ]
+    },
+    "Curl con barra": {
+      "musculo": "Bíceps",
+      "equipo": "Gimnasio",
+      "pasos": [
+        "De pie, sujeta la barra con agarre supino a la anchura de los hombros.",
+        "Flexiona los codos llevando la barra al pecho sin moverlos de su sitio.",
+        "Baja controlando hasta extender por completo los brazos."
+      ],
+      "imagenes": [
+        "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Barbell_Curl/0.jpg",
+        "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Barbell_Curl/1.jpg"
+      ]
+    },
+    "Curl martillo": {
+      "musculo": "Bíceps",
+      "equipo": "Mancuernas",
+      "pasos": [
+        "Mancuernas a los lados con agarre neutro, palmas hacia el cuerpo.",
+        "Sube sin girar la muñeca y con los codos fijos.",
+        "Baja despacio; puedes alternar brazos."
+      ],
+      "imagenes": [
+        "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Hammer_Curls/0.jpg",
+        "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Hammer_Curls/1.jpg"
+      ]
+    },
+    "Curl inclinado": {
+      "musculo": "Bíceps",
+      "equipo": "Mancuernas",
+      "pasos": [
+        "Túmbate en un banco inclinado con los brazos colgando.",
+        "Haz el curl alternando brazos con el codo detrás del torso.",
+        "Estira bien el bíceps abajo antes de la siguiente repetición."
+      ],
+      "imagenes": [
+        "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Alternate_Incline_Dumbbell_Curl/0.jpg",
+        "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Alternate_Incline_Dumbbell_Curl/1.jpg"
+      ]
+    },
+    "Curl en polea": {
+      "musculo": "Bíceps",
+      "equipo": "Gimnasio",
+      "pasos": [
+        "Sujeta la manija de la polea baja con los codos pegados al cuerpo.",
+        "Flexiona los codos llevando la mano al hombro.",
+        "Vuelve controlando manteniendo la tensión constante."
+      ],
+      "imagenes": [
+        "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/High_Cable_Curls/0.jpg",
+        "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/High_Cable_Curls/1.jpg"
+      ]
+    },
+    "Curl con toalla": {
+      "musculo": "Bíceps",
+      "equipo": "Peso corporal",
+      "pasos": [
+        "Pasa una toalla por el agarre de un disco o de la polea baja.",
+        "Sujeta un extremo con cada mano y realiza el curl igual que con barra.",
+        "La toalla obliga a un agarre más fuerte y suma tensión al bíceps."
+      ],
+      "imagenes": []
+    },
+    "Extension de triceps en polea": {
+      "musculo": "Tríceps",
+      "equipo": "Gimnasio",
+      "pasos": [
+        "De frente a la polea alta, con los codos pegados al cuerpo.",
+        "Extiende los brazos llevando la barra hacia los muslos.",
+        "Solo se mueven los antebrazos; sube controlando."
+      ],
+      "imagenes": [
+        "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Triceps_Pushdown/0.jpg",
+        "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Triceps_Pushdown/1.jpg"
+      ]
+    },
+    "Press frances": {
+      "musculo": "Tríceps",
+      "equipo": "Mancuernas / barra Z",
+      "pasos": [
+        "Túmbate en el banco con el peso extendido sobre el pecho.",
+        "Flexiona los codos llevando el peso por detrás de la cabeza.",
+        "Extiende de nuevo sin separar los codos."
+      ],
+      "imagenes": [
+        "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Lying_Triceps_Press/0.jpg",
+        "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Lying_Triceps_Press/1.jpg"
+      ]
+    },
+    "Rompecraneos": {
+      "musculo": "Tríceps",
+      "equipo": "Mancuernas / barra Z",
+      "pasos": [
+        "Túmbate con la barra Z sobre el pecho, brazos perpendiculares al suelo.",
+        "Flexiona solo los codos bajando la barra hacia la frente.",
+        "Extiende arriba sin cambiar la posición de los hombros."
+      ],
+      "imagenes": [
+        "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/EZ-Bar_Skullcrusher/0.jpg",
+        "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/EZ-Bar_Skullcrusher/1.jpg"
+      ]
+    },
+    "Fondos en banco": {
+      "musculo": "Tríceps",
+      "equipo": "Peso corporal",
+      "pasos": [
+        "Manos al borde del banco, piernas al frente y talones en el suelo.",
+        "Baja flexionando los codos hasta unos 90 grados.",
+        "Empuja con las manos para subir del todo."
+      ],
+      "imagenes": [
+        "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Bench_Dips/0.jpg",
+        "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Bench_Dips/1.jpg"
+      ]
+    },
+    "Flexiones diamante": {
+      "musculo": "Tríceps",
+      "equipo": "Peso corporal",
+      "pasos": [
+        "Manos juntas bajo el pecho formando un triángulo.",
+        "Baja manteniendo los codos pegados al torso.",
+        "Empuja hasta extender: el trabajo lo hace el tríceps."
+      ],
+      "imagenes": [
+        "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Push-Ups_-_Close_Triceps_Position/0.jpg",
+        "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Push-Ups_-_Close_Triceps_Position/1.jpg"
+      ]
+    },
+    "Encogimientos con barra": {
+      "musculo": "Trapecio",
+      "equipo": "Gimnasio",
+      "pasos": [
+        "Barra al frente del cuerpo, con los brazos rectos.",
+        "Sube los hombros hacia las orejas sin flexionar los codos.",
+        "Pausa arriba y baja controlando."
+      ],
+      "imagenes": [
+        "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Barbell_Shrug/0.jpg",
+        "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Barbell_Shrug/1.jpg"
+      ]
+    },
+    "Encogimientos con mancuernas": {
+      "musculo": "Trapecio",
+      "equipo": "Mancuernas",
+      "pasos": [
+        "Mancuernas a los lados, brazos rectos y relajados.",
+        "Eleva los hombros recto hacia arriba, sin rotarlos.",
+        "Aguanta un segundo arriba y baja despacio."
+      ],
+      "imagenes": [
+        "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Dumbbell_Shrug/0.jpg",
+        "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Dumbbell_Shrug/1.jpg"
+      ]
+    },
+    "Elevacion de gemelos de pie": {
+      "musculo": "Gemelos",
+      "equipo": "Peso corporal",
+      "pasos": [
+        "Puntas de los pies sobre un escalón o plataforma, talones al aire.",
+        "Baja los talones para estirar bien el gemelo.",
+        "Sube a la punta lo máximo posible y aprieta arriba."
+      ],
+      "imagenes": [
+        "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Standing_Calf_Raises/0.jpg",
+        "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Standing_Calf_Raises/1.jpg"
+      ]
+    },
+    "Elevacion de gemelos sentado": {
+      "musculo": "Gemelos",
+      "equipo": "Mancuernas / máquina",
+      "pasos": [
+        "Siéntate con el rodillo (o un peso) sobre los muslos.",
+        "Sube los talones empujando con la punta del pie.",
+        "Baja despacio hasta estirar por completo."
+      ],
+      "imagenes": [
+        "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Seated_Calf_Raise/0.jpg",
+        "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Seated_Calf_Raise/1.jpg"
+      ]
+    },
+    "Crunch": {
+      "musculo": "Abdomen",
+      "equipo": "Peso corporal",
+      "pasos": [
+        "Boca arriba, rodillas flexionadas y manos junto a las sienes.",
+        "Enrolla el torso llevando las costillas hacia la cadera.",
+        "Sube solo unos 30 grados y no tires del cuello."
+      ],
+      "imagenes": [
+        "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Crunches/0.jpg",
+        "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Crunches/1.jpg"
+      ]
+    },
+    "Plancha": {
+      "musculo": "Abdomen",
+      "equipo": "Peso corporal",
+      "pasos": [
+        "Apoya antebrazos y puntas de los pies, con el cuerpo en línea recta.",
+        "Aprieta abdomen y glúteos sin hundir la lumbar.",
+        "Respira normal y aguanta el tiempo previsto."
+      ],
+      "imagenes": [
+        "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Plank/0.jpg",
+        "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Plank/1.jpg"
+      ]
+    },
+    "Elevacion de piernas colgado": {
+      "musculo": "Abdomen",
+      "equipo": "Barra fija",
+      "pasos": [
+        "Cuelga de la barra con los brazos extendidos.",
+        "Sube las piernas rectas (o flexionadas si cuesta) hasta la altura de la cadera.",
+        "Baja controlando sin balancearte."
+      ],
+      "imagenes": [
+        "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Hanging_Leg_Raise/0.jpg",
+        "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Hanging_Leg_Raise/1.jpg"
+      ]
+    },
+    "Rueda abdominal": {
+      "musculo": "Abdomen",
+      "equipo": "Mancuernas / rueda",
+      "pasos": [
+        "De rodillas, con las manos sobre la rueda (o una barra con discos).",
+        "Rueda al frente estirando el cuerpo sin arquear la lumbar.",
+        "Regresa contrayendo fuerte el abdomen."
+      ],
+      "imagenes": [
+        "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Barbell_Ab_Rollout_-_On_Knees/0.jpg",
+        "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Barbell_Ab_Rollout_-_On_Knees/1.jpg"
+      ]
+    }
+  }
+}

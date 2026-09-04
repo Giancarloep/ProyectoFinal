@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Personal Trainer — Gestor de Entrenamiento</title>
+  <link rel="stylesheet" href="/css/estilos.css">
+</head>
+<body>
+
+<div id="appContainer">
+
+<header class="topbar">
+  <div class="logo">
+    <span>Personal<b>Trainer</b></span>
+  </div>
+
+  <nav class="tabs" id="tabs">
+    <button class="tab activo" data-tab="perfil">Perfil</button>
+    <button class="tab" data-tab="rutina">Rutina</button>
+    <button class="tab" data-tab="prs">PRs</button>
+    <button class="tab" data-tab="hipertrofia">Hipertrofia</button>
+    <button class="tab" data-tab="asistente">Asistente IA</button>
+    <button class="tab" data-tab="descanso">Descanso</button>
+  </nav>
+
+  <div class="sesion">
+    <span id="relojSesion" class="reloj-sesion" hidden>00:00</span>
+    <button id="btnTheme" class="boton fantasma" aria-label="Cambiar tema" title="Alternar modo claro/oscuro"></button>
+    <button id="btnSesion" class="boton fantasma">Iniciar sesión</button>
+  </div>
+</header>
+
+<main>
+  <section id="tab-perfil" class="panel activo">
+    <div class="tarjeta estrecha">
+      <h2>Tu perfil</h2>
+      <p class="subtitulo">Cuéntanos quién eres y cuántos días puedes entrenar.</p>
+
+      <label class="campo">
+        <span>Nombre</span>
+        <input id="inpNombre" type="text" placeholder="Tu nombre" maxlength="40" autocomplete="off">
+      </label>
+
+      <label class="campo">
+        <span>Peso corporal (lb) <small>(para tus tiers de fuerza)</small></span>
+        <input id="inpPesoCorporal" type="number" min="55" max="660" step="1" placeholder="154">
+      </label>
+
+      <label class="campo">
+        <span>Días por semana: <output id="outDias">4</output></span>
+        <input id="inpDias" type="range" min="1" max="7" step="1" value="4">
+      </label>
+
+      <div class="campo">
+        <span>¿Qué buscas?</span>
+        <div id="listaObjetivos" class="objetivos"></div>
+      </div>
+
+      <p id="notaDias" class="nota-dias" hidden></p>
+
+      <div class="campo">
+        <span>¿Dónde entrenas?</span>
+        <div id="listaEquipos" class="chips"></div>
+      </div>
+
+      <div class="campo">
+        <span>Músculos prioritarios <small>(recibirán volumen de máxima ganancia)</small></span>
+        <div id="chipsMusculos" class="chips"></div>
+      </div>
+
+      <p class="insignia" id="tipoSplit" hidden></p>
+
+      <button id="btnGuardarPerfil" class="boton primario">Guardar perfil</button>
+    </div>
+  </section>
+
+  <section id="tab-rutina" class="panel">
+    <div class="fila-cabecera">
+      <div>
+        <h2>Rutina semanal</h2>
+        <p class="subtitulo" id="subtituloRutina">Generada automáticamente según tus días disponibles.</p>
+      </div>
+      <button id="btnGenerarRutina" class="boton primario">Generar rutina</button>
+    </div>
+    <div id="contenedorRutina" class="grid-dias"></div>
+    <p id="msgRutina" class="vacio">Aún no hay rutina. Crea tu perfil y pulsa «Generar rutina».</p>
+  </section>
+
+  <section id="tab-prs" class="panel">
+    <div class="tarjeta tier-tarjeta" id="tarjetaTiers" hidden>
+      <div class="tier-cabecera">
+        <div>
+          <h2>Tu tier de fuerza</h2>
+          <p class="subtitulo" id="tierSubtitulo"></p>
+        </div>
+        <span class="tier-insignia" id="tierInsignia"></span>
+      </div>
+      <div class="tier-barra"><i id="tierBarra"></i></div>
+      <p id="tierSiguiente" class="nota" style="margin-top:10px"></p>
+    </div>
+
+    <div class="dos-columnas">
+      <div class="tarjeta">
+        <h2>Registrar levantamiento</h2>
+        <label class="campo">
+          <span>Ejercicio</span>
+          <input id="inpEjercicio" list="listaEjercicios" placeholder="Press banca..." autocomplete="off">
+          <datalist id="listaEjercicios"></datalist>
+        </label>
+        <div class="fila-campos">
+          <label class="campo">
+            <span>Peso (lb)</span>
+            <input id="inpPeso" type="number" min="1" step="1" placeholder="176">
+          </label>
+          <label class="campo">
+            <span>Repeticiones</span>
+            <input id="inpReps" type="number" min="1" max="100" placeholder="5">
+          </label>
+        </div>
+        <button id="btnRegistrarPr" class="boton primario ancho">Registrar PR</button>
+        <p class="nota">El servidor calcula tu 1RM estimado (fórmula de Epley) y avisa si batiste récord.</p>
+      </div>
+
+      <div class="tarjeta">
+        <h2>Mis récords personales</h2>
+        <table class="tabla" id="tablaPrs">
+          <thead>
+            <tr><th>Ejercicio</th><th>Mejor marca</th><th>1RM est.</th><th>Tier</th><th>Fecha</th></tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+        <p id="msgPrs" class="vacio">Todavía no hay registros. ¡Ve a por ese primer PR!</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="tab-hipertrofia" class="panel">
+    <div class="tarjeta">
+      <h2>Tabla de hipertrofia</h2>
+      <p class="subtitulo">
+        MV = mantenimiento · MEV = mínimo efectivo · MAV = ajuste adaptable ·
+        MRV = máximo recuperable. Tu rutina se genera con estos valores.
+      </p>
+      <div class="tabla-scroll" id="contenedorTabla"></div>
+    </div>
+
+    <div class="tarjeta" style="margin-top:18px">
+      <h2>Tu volumen semanal</h2>
+      <p class="subtitulo" id="subtituloVolumen">Series por semana según tu rutina actual, evaluadas contra la tabla.</p>
+      <div id="contenedorVolumen" class="grid-volumen"></div>
+      <p id="msgVolumen" class="vacio">Genera una rutina para ver el análisis de volumen.</p>
+    </div>
+  </section>
+
+  <section id="tab-asistente" class="panel">
+    <div class="tarjeta chat-tarjeta">
+      <h2>Entrenador IA</h2>
+      <p class="subtitulo">Responde con base en tu perfil, tu rutina, la tabla de hipertrofia y tus PRs.</p>
+      <p id="estadoIa" class="ia-estado">Detectando IA local...</p>
+      <div id="chatMensajes" class="chat"></div>
+      <form id="formChat" class="chat-form">
+        <input id="inpChat" type="text" placeholder="Pregúntame algo..." autocomplete="off" maxlength="300">
+        <button class="boton primario" type="submit">Enviar</button>
+      </form>
+      <div class="sugerencias">
+        <button data-pregunta="¿Cómo está mi rutina?">¿Cómo está mi rutina?</button>
+        <button data-pregunta="Analiza mi volumen semanal">Analiza mi volumen</button>
+        <button data-pregunta="¿Puedo entrenar solo desde casa sin equipo?">¿Y si solo puedo entrenar en casa?</button>
+        <button data-pregunta="Explícame la tabla de hipertrofia">Explícame la tabla</button>
+        <button data-pregunta="Mis mejores PRs">Mis mejores PRs</button>
+      </div>
+    </div>
+  </section>
+
+  <div id="modalSwap" class="modal-fondo" hidden>
+    <div class="modal">
+      <h3>Cambiar ejercicio</h3>
+      <p id="modalActual" class="subtitulo"></p>
+      <div id="modalOpciones" class="modal-opciones"></div>
+      <button id="btnCerrarModal" class="boton fantasma ancho">Cancelar</button>
+    </div>
+  </div>
+
+  <div id="modalGuia" class="modal-fondo" hidden>
+    <div class="modal modal-guia">
+      <h3 id="guiaTitulo"></h3>
+      <p id="guiaMeta" class="subtitulo"></p>
+      <div id="guiaImagenes" class="guia-imagenes"></div>
+      <p id="guiaSinFoto" class="nota" hidden>Sin imagen de referencia para este ejercicio.</p>
+      <h4 class="guia-subtitulo">Cómo se hace</h4>
+      <ol id="guiaPasos" class="guia-pasos"></ol>
+      <button id="btnCerrarGuia" class="boton fantasma ancho">Cerrar</button>
+    </div>
+  </div>
+
+  <section id="tab-descanso" class="panel">
+    <div class="tarjeta centro">
+      <h2>Timer de descanso</h2>
+
+      <div class="anillo-wrap">
+        <svg width="230" height="230" viewBox="0 0 230 230">
+          <circle class="anillo-fondo" cx="115" cy="115" r="95"/>
+          <circle class="anillo-progreso" id="anilloProgreso" cx="115" cy="115" r="95"/>
+        </svg>
+        <div class="anillo-texto" id="textoTimer">01:00</div>
+      </div>
+
+      <div class="presets">
+        <button class="preset activo" data-segundos="60">60s</button>
+        <button class="preset" data-segundos="90">90s</button>
+        <button class="preset" data-segundos="120">2 min</button>
+        <button class="preset" data-segundos="180">3 min</button>
+      </div>
+
+      <div class="controles-timer">
+        <button id="btnTimerToggle" class="boton primario">Iniciar</button>
+        <button id="btnTimerReset" class="boton fantasma">Reiniciar</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div id="toast" class="toast"></div>
+
+<footer>Personal Trainer · backend C++ · API REST en el puerto 8080</footer>
+
+</div> <!-- /appContainer -->
+
+<script src="/js/app.js"></script>
+</body>
+</html>
