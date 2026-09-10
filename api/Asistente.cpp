@@ -29,8 +29,8 @@ void reemplazar(std::string& s, const std::string& de, const std::string& a) {
 std::string normalizar(const std::string& texto) {
     std::string s = minusculas(texto);
     const std::pair<const char*, const char*> mapa[] = {
-        {"á", "a"}, {"é", "e"}, {"í", "i"}, {"ó", "o"},
-        {"ú", "u"}, {"ü", "u"}, {"ñ", "n"},
+        {"a", "a"}, {"e", "e"}, {"i", "i"}, {"o", "o"},
+        {"u", "u"}, {"u", "u"}, {"n", "n"},
     };
     for (const auto& [de, a] : mapa) reemplazar(s, de, a);
     return s;
@@ -318,9 +318,12 @@ bool Asistente::intentarReglas(const std::string& pregunta,
                      "doping"})) {
         respuesta =
             "Sobre suplementacion:\n"
-            "- Con evidencia solida: creatina monohidratada (3-5 g/dia), cafeina pre-entreno y proteina en polvo si no llegas con comida.\n"
-            "- Los esteroides anabolicos tienen riesgos serios de salud y solo deben manejarse con supervision medica.\n"
-            "- En la app el modo \"Entrenamiento avanzado\" refleja volumenes tipo zona naranja-roja de la tabla, pensados para quien tiene recuperacion muy por encima de lo natural.";
+            "- Con evidencia solida: creatina monohidratada (3-5 g/dia), cafeina pre-entreno y proteina en polvo si no "
+            "llegas con comida.\n"
+            "- Los esteroides anabolicos tienen riesgos serios de salud y solo deben manejarse con supervision "
+            "medica.\n"
+            "- En la app el modo \"Entrenamiento avanzado\" refleja volumenes tipo zona naranja-roja de la tabla, "
+            "pensados para quien tiene recuperacion muy por encima de lo natural.";
         return true;
     }
 

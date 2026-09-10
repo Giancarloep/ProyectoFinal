@@ -59,6 +59,9 @@ json usuarioToJson(const Usuario& u) {
         {"nombre", u.nombre},
         {"diasDisponibles", u.diasDisponibles},
         {"pesoCorporal", u.pesoCorporal},
+        {"altura", u.altura},
+        {"edad", u.edad},
+        {"sexo", u.sexo},
         {"tipoSplit", Servicio::tipoSplit(u.diasDisponibles)},
         {"musculosPrioritarios", prioritarios},
         {"objetivo", objetivoInfo},
@@ -85,7 +88,7 @@ json grupoTablaToJson(const GrupoTabla& g) {
 
 void responderJson(httplib::Response& res, const json& cuerpo, int estado = 200) {
     res.status = estado;
-    res.set_content(cuerpo.dump(), "application/json");
+    res.set_content(cuerpo.dump(), "application/json; charset=utf-8");
 }
 
 void responderError(httplib::Response& res, int estado, const char* mensaje) {
@@ -231,9 +234,27 @@ void configurarApi(httplib::Server& servidor, Servicio& servicio) {
                               pesoCorporal =
                                   cuerpo["pesoCorporal"].get<double>();
                           }
+                          double altura = 0.0;
+                          if (cuerpo.contains("altura") &&
+                              cuerpo["altura"].is_number()) {
+                              altura =
+                                  cuerpo["altura"].get<double>();
+                          }
+                          int edad = 0;
+                          if (cuerpo.contains("edad") &&
+                              cuerpo["edad"].is_number()) {
+                              edad =
+                                  cuerpo["edad"].get<int>();
+                          }
+                          std::string sexo = "hombre";
+                          if (cuerpo.contains("sexo") &&
+                              cuerpo["sexo"].is_string()) {
+                              sexo =
+                                  cuerpo["sexo"].get<std::string>();
+                          }
                           Usuario usuario = servicio.crearPerfil(
                               nombre, dias, prioritarios, objetivo, equipo,
-                              pesoCorporal);
+                              pesoCorporal, altura, edad, sexo);
                           responderJson(res, usuarioToJson(usuario));
                       } catch (const json::exception&) {
                           responderError(res, 400, "json invalido");

@@ -93,7 +93,7 @@ std::vector<PlanDia> planSemanal(int dias) {
         std::vector<PlanDia> plan = {
             {"Empuje", {"Pecho", "Hombro", "Triceps"}},
             {"Traccion", {"Espalda", "Biceps", "Trapecio"}},
-            {"Pierna", {"Cuadriceps", "Femoral", "Gemelos"}},
+            {"Pierna", {"Cuadriceps", "Femoral", "Gluteos", "Gemelos"}},
         };
         while (plan.size() < static_cast<std::size_t>(dias)) {
             PlanDia extra = plan[plan.size() % 3];
@@ -104,9 +104,9 @@ std::vector<PlanDia> planSemanal(int dias) {
     if (dias >= 4) {
         std::vector<PlanDia> plan = {
             {"Torso A", {"Pecho", "Espalda", "Hombro", "Biceps", "Triceps"}},
-            {"Pierna A", {"Cuadriceps", "Femoral", "Gemelos", "Abdomen"}},
+            {"Pierna A", {"Cuadriceps", "Femoral", "Gluteos", "Gemelos", "Abdomen"}},
             {"Torso B", {"Pecho", "Espalda", "Hombro", "Biceps", "Triceps"}},
-            {"Pierna B", {"Cuadriceps", "Femoral", "Gemelos", "Abdomen"}},
+            {"Pierna B", {"Cuadriceps", "Femoral", "Gluteos", "Gemelos", "Abdomen"}},
         };
         if (dias >= 5) {
             plan.push_back({"Hombro y brazos",
@@ -117,7 +117,7 @@ std::vector<PlanDia> planSemanal(int dias) {
     std::vector<PlanDia> plan;
     for (int i = 0; i < dias; ++i) {
         plan.push_back({"Cuerpo completo",
-                        {"Cuadriceps", "Pecho", "Espalda", "Hombro", "Biceps",
+                        {"Cuadriceps", "Gluteos", "Pecho", "Espalda", "Hombro", "Biceps",
                          "Triceps", "Gemelos", "Abdomen"}});
     }
     return plan;

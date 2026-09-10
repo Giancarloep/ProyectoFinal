@@ -22,12 +22,18 @@ const char* Servicio::tipoSplit(int dias) {
 Usuario Servicio::crearPerfil(std::string nombre, int dias,
                               std::vector<std::string> musculosPrioritarios,
                               std::string objetivo, std::string equipo,
-                              double pesoCorporal) {
+                              double pesoCorporal, double altura, int edad,
+                              std::string sexo) {
     if (nombre.empty()) nombre = "(sin nombre)";
     if (dias < 1) dias = 1;
     if (dias > 7) dias = 7;
     if (pesoCorporal < 0) pesoCorporal = 0;
     if (pesoCorporal > 400) pesoCorporal = 400;
+    if (altura < 0) altura = 0;
+    if (altura > 300) altura = 300;
+    if (edad < 0) edad = 0;
+    if (edad > 120) edad = 120;
+    if (sexo != "hombre" && sexo != "mujer") sexo = "hombre";
     if (!buscarObjetivo(objetivo)) objetivo = "progresar";
     if (!buscarEquipo(equipo)) equipo = "gimnasio";
 
@@ -39,6 +45,9 @@ Usuario Servicio::crearPerfil(std::string nombre, int dias,
     m_usuario.nombre = std::move(nombre);
     m_usuario.diasDisponibles = dias;
     m_usuario.pesoCorporal = pesoCorporal;
+    m_usuario.altura = altura;
+    m_usuario.edad = edad;
+    m_usuario.sexo = std::move(sexo);
     m_usuario.objetivo = std::move(objetivo);
     m_usuario.equipo = std::move(equipo);
     m_usuario.musculosPrioritarios = std::move(validos);

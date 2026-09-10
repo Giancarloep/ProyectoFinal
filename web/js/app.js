@@ -782,7 +782,7 @@ async function cerrarSesion() {
   const minutos = Math.round(total / 60);
   toast(`Sesión terminada: ${formatoReloj(total)} (${minutos} min)`, "ok");
   $("relojSesion").hidden = true;
-  $("btnSesion").textContent = "Iniciar sesión";
+  $("btnSesion").textContent = "Iniciar entreno";
 }
 
 async function refrescarEstadoSesion() {

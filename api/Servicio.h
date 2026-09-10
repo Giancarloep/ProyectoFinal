@@ -52,7 +52,10 @@ public:
                         std::vector<std::string> musculosPrioritarios = {},
                         std::string objetivo = "progresar",
                         std::string equipo = "gimnasio",
-                        double pesoCorporal = 0.0);
+                        double pesoCorporal = 0.0,
+                        double altura = 0.0,
+                        int edad = 0,
+                        std::string sexo = "hombre");
 
     std::vector<Ejercicio> alternativasDe(int dia, int indice) const;
     bool cambiarEjercicio(int dia, int indice, const std::string& nuevo);
