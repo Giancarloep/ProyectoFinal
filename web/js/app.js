@@ -520,6 +520,17 @@ $("btnGenerarRutina").addEventListener("click", async () => {
   }
 });
 
+$("btnDeshacer").addEventListener("click", async () => {
+  try {
+    const rutina = await api("/api/rutina/deshacer", { method: "POST" });
+    pintarRutina(rutina);
+    cargarVolumen();
+    toast("Cambio deshecho (pila de historial)", "ok");
+  } catch (err) {
+    toast(err.message, "error");
+  }
+});
+
 async function cargarVolumen() {
   try {
     const datos = await api("/api/volumen");
@@ -608,6 +619,7 @@ async function cargarTiers() {
   }
 
   tarjeta.hidden = false;
+
 const insignia = $("tierInsignia");
   insignia.textContent = datos.tierActual || "Saiyajin base";
   insignia.className = `tier-insignia tier-${datos.colorActual || "base"}`;
@@ -774,8 +786,8 @@ async function cerrarSesion() {
   sesionIntervalo = null;
   let total = 0;
   try {
-    const estado = await api("/api/sesion");
-    total = estado.segundos;
+    const fin = await api("/api/sesion/terminar", { method: "POST" });
+    total = fin.segundos;
   } catch {
     /* nada */
   }
@@ -783,6 +795,22 @@ async function cerrarSesion() {
   toast(`Sesión terminada: ${formatoReloj(total)} (${minutos} min)`, "ok");
   $("relojSesion").hidden = true;
   $("btnSesion").textContent = "Iniciar entreno";
+  cargarSesiones();
+}
+
+async function cargarSesiones() {
+  try {
+    const datos = await api("/api/sesiones");
+    const lista = $("listaSesiones");
+    lista.innerHTML = datos.sesiones
+      .map(
+        (s) => `<li><span>${s.fecha}</span><span class="num">${formatoReloj(s.segundos)}</span></li>`
+      )
+      .join("");
+    $("msgSesiones").hidden = datos.sesiones.length > 0;
+  } catch {
+    /* sin conexión */
+  }
 }
 
 async function refrescarEstadoSesion() {
@@ -873,6 +901,7 @@ async function inicializarApp() {
   await cargarVolumen();
   cargarEstadoIa();
   refrescarEstadoSesion();
+  cargarSesiones();
   agregarMensaje(
     "bot",
     "Hola! Soy tu entrenador virtual. Pregúntame por tu rutina, el volumen semanal, la tabla de hipertrofia, tus PRs o menciona cualquier músculo (pecho, espalda, biceps...)."

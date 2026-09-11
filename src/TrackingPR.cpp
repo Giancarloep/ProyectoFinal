@@ -17,7 +17,7 @@ std::string fechaActual() {
     std::strftime(buffer, sizeof(buffer), "%Y-%m-%d", &tmLocal);
     return buffer;
 }
-
+//Formula de Epley
 double TrackerPRs::estimar1RM(double pesoKg, int repeticiones) {
     if (pesoKg <= 0.0 || repeticiones <= 0) {
         return 0.0;

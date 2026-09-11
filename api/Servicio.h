@@ -11,6 +11,19 @@
 #include "TrackingPR.h"
 #include "Usuario.h"
 #include "Ejercicio.h"
+#include "Pila.h"
+#include "Cola.h"
+
+struct CambioEjercicio {
+    std::size_t dia = 0;
+    std::size_t indice = 0;
+    Ejercicio anterior;
+};
+
+struct SesionEntrenamiento {
+    std::string fecha;
+    long segundos = 0;
+};
 #include "FirebaseClient.h"
 
 struct ResultadoPR {
@@ -59,6 +72,8 @@ public:
 
     std::vector<Ejercicio> alternativasDe(int dia, int indice) const;
     bool cambiarEjercicio(int dia, int indice, const std::string& nuevo);
+    bool deshacerCambio();
+    bool hayCambiosParaDeshacer() const { return !m_historialCambios.vacia(); }
 
     bool hayRutina() const { return !m_rutina.vacia(); }
     const Rutina& rutina() const { return m_rutina; }
@@ -73,6 +88,8 @@ public:
     void iniciarSesionEntrenamiento();
     bool sesionActiva() const { return m_sesionActiva; }
     long segundosSesion() const;
+    SesionEntrenamiento terminarSesionEntrenamiento();
+    std::vector<SesionEntrenamiento> sesiones() const;
 
     std::vector<VolumenMusculo> volumenSemanal() const { return analizarVolumenSemanal(m_rutina); }
 
@@ -83,6 +100,8 @@ private:
     TrackerPRs m_tracker;
     RepositorioMemoria m_repositorio;
     bool m_sesionActiva = false;
+    Pila<CambioEjercicio> m_historialCambios;
+    Cola<SesionEntrenamiento> m_colaSesiones;
 };
 
 #endif

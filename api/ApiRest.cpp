@@ -158,6 +158,15 @@ void configurarApi(httplib::Server& servidor, Servicio& servicio) {
                       }
                   });
 
+    servidor.Post("/api/rutina/deshacer",
+                  [&servicio](const httplib::Request&, httplib::Response& res) {
+                      if (!servicio.deshacerCambio()) {
+                          return responderError(
+                              res, 400, "sin cambios para deshacer");
+                      }
+                      responderJson(res, rutinaToJson(servicio.rutina()));
+                  });
+
     servidor.Get("/api/objetivos",
                  [](const httplib::Request&, httplib::Response& res) {
                      json lista = json::array();
@@ -414,5 +423,23 @@ void configurarApi(httplib::Server& servidor, Servicio& servicio) {
                                             {"segundos",
                                              servicio.segundosSesion()},
                                         });
+                 });
+
+    servidor.Post("/api/sesion/terminar",
+                  [&servicio](const httplib::Request&, httplib::Response& res) {
+                      const SesionEntrenamiento s =
+                          servicio.terminarSesionEntrenamiento();
+                      responderJson(res, json{{"fecha", s.fecha},
+                                              {"segundos", s.segundos}});
+                  });
+
+    servidor.Get("/api/sesiones",
+                 [&servicio](const httplib::Request&, httplib::Response& res) {
+                     json lista = json::array();
+                     for (const auto& s : servicio.sesiones()) {
+                         lista.push_back(json{{"fecha", s.fecha},
+                                              {"segundos", s.segundos}});
+                     }
+                     responderJson(res, json{{"sesiones", lista}});
                  });
 }

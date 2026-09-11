@@ -66,18 +66,45 @@ std::vector<Ejercicio> Servicio::alternativasDe(int dia, int indice) const {
     }
     return {};
 }
-
-bool Servicio::cambiarEjercicio(int dia, int indice, const std::string& nuevo) {
+bool Servicio::cambiarEjercicio(int dia, int indice,
+                                const std::string& nuevo) {
+    if (dia < 0 || indice < 0 ||
+        dia >= static_cast<int>(m_rutina.dias().size()) ||
+        indice >= static_cast<int>(m_rutina.dias()[static_cast<std::size_t>(dia)].ejercicios.size())) {
+        return false;
+    }
+    const Ejercicio anterior =
+        m_rutina.dias()[static_cast<std::size_t>(dia)]
+            .ejercicios[static_cast<std::size_t>(indice)];
     auto reemplazo = GeneradorRutinas::crearEjercicio(m_usuario, nuevo);
     if (!reemplazo) return false;
-    return m_rutina.reemplazarEjercicio(static_cast<std::size_t>(dia),
-                                        static_cast<std::size_t>(indice),
-                                        *reemplazo) &&
-           (m_repositorio.guardarRutina(m_rutina), true);
+    if (!m_rutina.reemplazarEjercicio(static_cast<std::size_t>(dia),
+                                      static_cast<std::size_t>(indice),
+                                      *reemplazo)) {
+        return false;
+    }
+    m_historialCambios.push(
+        {static_cast<std::size_t>(dia), static_cast<std::size_t>(indice),
+         anterior});
+    m_repositorio.guardarRutina(m_rutina);
+    return true;
+}
+
+bool Servicio::deshacerCambio() {
+    if (m_historialCambios.vacia()) return false;
+    const CambioEjercicio cambio = m_historialCambios.cima();
+    m_historialCambios.pop();
+    if (!m_rutina.reemplazarEjercicio(cambio.dia, cambio.indice,
+                                      cambio.anterior)) {
+        return false;
+    }
+    m_repositorio.guardarRutina(m_rutina);
+    return true;
 }
 
 const Rutina& Servicio::generarRutina() {
     m_rutina = GeneradorRutinas::generar(m_usuario);
+    m_historialCambios.limpiar();
     m_repositorio.guardarRutina(m_rutina);
     return m_rutina;
 }
@@ -176,4 +203,18 @@ void Servicio::iniciarSesionEntrenamiento() {
 
 long Servicio::segundosSesion() const {
     return temporizador_transcurrido_segundos();
+}
+
+SesionEntrenamiento Servicio::terminarSesionEntrenamiento() {
+    SesionEntrenamiento sesion{fechaActual(), segundosSesion()};
+    m_sesionActiva = false;
+    m_colaSesiones.encolar(sesion);
+    while (m_colaSesiones.tamano() > 10) {
+        m_colaSesiones.desencolar();
+    }
+    return sesion;
+}
+
+std::vector<SesionEntrenamiento> Servicio::sesiones() const {
+    return m_colaSesiones.aVector();
 }
