@@ -9,10 +9,6 @@
 #include "ApiRest.h"
 #include "Servicio.h"
 
-#ifdef _WIN32
-#include <windows.h>
-#endif
-
 namespace {
 
 constexpr int PUERTO = 8080;

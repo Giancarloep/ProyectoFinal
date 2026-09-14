@@ -378,6 +378,7 @@ function pintarRutina(rutina) {
               <span class="ej-acciones">
                 <button class="guia" data-ejercicio="${ej.nombre}" title="Ver cómo se hace">¿cómo?</button>
                 <button class="swap" data-dia="${i}" data-indice="${j}">cambiar</button>
+                <button class="quitar" data-dia="${i}" data-indice="${j}" title="Quitar ejercicio">quitar</button>
               </span>
             </li>`
           )
@@ -404,6 +405,25 @@ $("contenedorRutina").addEventListener("click", (e) => {
   const boton = e.target.closest(".guia");
   if (!boton) return;
   abrirModalGuia(boton.dataset.ejercicio);
+});
+
+$("contenedorRutina").addEventListener("click", async (e) => {
+  const boton = e.target.closest(".quitar");
+  if (!boton) return;
+  try {
+    const rutina = await api("/api/rutina/eliminar", {
+      method: "POST",
+      body: JSON.stringify({
+        dia: Number(boton.dataset.dia),
+        indice: Number(boton.dataset.indice),
+      }),
+    });
+    pintarRutina(rutina);
+    cargarVolumen();
+    toast("Ejercicio eliminado (Deshacer lo restaura)", "ok");
+  } catch (err) {
+    toast(err.message, "error");
+  }
 });
 
 let guiaDatos = null;

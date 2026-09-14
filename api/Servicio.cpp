@@ -85,7 +85,27 @@ bool Servicio::cambiarEjercicio(int dia, int indice,
     }
     m_historialCambios.push(
         {static_cast<std::size_t>(dia), static_cast<std::size_t>(indice),
-         anterior});
+         anterior, false});
+    m_repositorio.guardarRutina(m_rutina);
+    return true;
+}
+
+bool Servicio::eliminarEjercicio(int dia, int indice) {
+    if (dia < 0 || indice < 0 ||
+        dia >= static_cast<int>(m_rutina.dias().size()) ||
+        indice >= static_cast<int>(m_rutina.dias()[static_cast<std::size_t>(dia)].ejercicios.size())) {
+        return false;
+    }
+    const Ejercicio anterior =
+        m_rutina.dias()[static_cast<std::size_t>(dia)]
+            .ejercicios[static_cast<std::size_t>(indice)];
+    if (!m_rutina.quitarEjercicio(static_cast<std::size_t>(dia),
+                                  static_cast<std::size_t>(indice))) {
+        return false;
+    }
+    m_historialCambios.push(
+        {static_cast<std::size_t>(dia), static_cast<std::size_t>(indice),
+         anterior, true});
     m_repositorio.guardarRutina(m_rutina);
     return true;
 }
@@ -94,10 +114,12 @@ bool Servicio::deshacerCambio() {
     if (m_historialCambios.vacia()) return false;
     const CambioEjercicio cambio = m_historialCambios.cima();
     m_historialCambios.pop();
-    if (!m_rutina.reemplazarEjercicio(cambio.dia, cambio.indice,
-                                      cambio.anterior)) {
-        return false;
-    }
+    bool ok = cambio.eraEliminacion
+                  ? m_rutina.insertarEjercicio(cambio.dia, cambio.indice,
+                                               cambio.anterior)
+                  : m_rutina.reemplazarEjercicio(cambio.dia, cambio.indice,
+                                                 cambio.anterior);
+    if (!ok) return false;
     m_repositorio.guardarRutina(m_rutina);
     return true;
 }

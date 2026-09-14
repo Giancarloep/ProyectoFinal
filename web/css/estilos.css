@@ -16,7 +16,7 @@ html.light {
   --bg: #f4f6f9;
   --panel: #ffffff;
   --panel-2: #eef1f5;
-  --texto: #1a1f2e;
+  --texto: #b4bfd6;
   --texto-suave: #5a6a85;
   --acento: #e8481f;
   --acento-2: #e6a02c;
@@ -225,7 +225,8 @@ input[type="range"] {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
-  gap: 10px;
+  flex-wrap: wrap;
+  gap: 6px 10px;
   padding: 9px 18px;
 }
 .dia li + li { border-top: 1px solid rgba(38, 48, 63, .55); }
@@ -595,7 +596,20 @@ footer {
 }
 .swap:hover { color: var(--acento-2); border-color: var(--acento); }
 
-.ej-acciones { display: inline-flex; gap: 6px; }
+.quitar {
+  border: 1px solid var(--borde);
+  background: transparent;
+  color: var(--texto-suave);
+  border-radius: 8px;
+  padding: 3px 9px;
+  font-size: .72rem;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all .15s ease;
+}
+.quitar:hover { color: var(--error); border-color: var(--error); }
+
+.ej-acciones { display: inline-flex; gap: 6px; flex-basis: 100%; margin-top: 2px; }
 
 .guia {
   border: 1px solid var(--borde);

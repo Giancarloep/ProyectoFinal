@@ -1,6 +1,7 @@
 #ifndef RUTINA_H
 #define RUTINA_H
 
+#include <cstddef>
 #include <iostream>
 #include <string>
 #include <utility>
@@ -28,6 +29,25 @@ public:
             return false;
         }
         m_dias[dia].ejercicios[indice] = std::move(nuevo);
+        return true;
+    }
+
+    bool insertarEjercicio(std::size_t dia, std::size_t indice,
+                           Ejercicio ej) {
+        if (dia >= m_dias.size()) return false;
+        auto& v = m_dias[dia].ejercicios;
+        if (indice > v.size()) indice = v.size();
+        v.insert(v.begin() + static_cast<std::ptrdiff_t>(indice),
+                 std::move(ej));
+        return true;
+    }
+
+    bool quitarEjercicio(std::size_t dia, std::size_t indice) {
+        if (dia >= m_dias.size() || indice >= m_dias[dia].ejercicios.size()) {
+            return false;
+        }
+        m_dias[dia].ejercicios.erase(m_dias[dia].ejercicios.begin() +
+                                     static_cast<std::ptrdiff_t>(indice));
         return true;
     }
 

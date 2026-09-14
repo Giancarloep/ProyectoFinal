@@ -167,6 +167,24 @@ void configurarApi(httplib::Server& servidor, Servicio& servicio) {
                       responderJson(res, rutinaToJson(servicio.rutina()));
                   });
 
+    servidor.Post("/api/rutina/eliminar",
+                  [&servicio](const httplib::Request& req,
+                              httplib::Response& res) {
+                      try {
+                          json cuerpo = json::parse(req.body);
+                          int dia = cuerpo.at("dia").get<int>();
+                          int indice = cuerpo.at("indice").get<int>();
+                          if (!servicio.eliminarEjercicio(dia, indice)) {
+                              return responderError(
+                                  res, 400,
+                                  "no se pudo eliminar el ejercicio");
+                          }
+                          responderJson(res, rutinaToJson(servicio.rutina()));
+                      } catch (const json::exception&) {
+                          responderError(res, 400, "json invalido");
+                      }
+                  });
+
     servidor.Get("/api/objetivos",
                  [](const httplib::Request&, httplib::Response& res) {
                      json lista = json::array();

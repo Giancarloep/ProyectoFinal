@@ -18,6 +18,7 @@ struct CambioEjercicio {
     std::size_t dia = 0;
     std::size_t indice = 0;
     Ejercicio anterior;
+    bool eraEliminacion = false;  // true: deshacer = reinsertar
 };
 
 struct SesionEntrenamiento {
@@ -72,6 +73,7 @@ public:
 
     std::vector<Ejercicio> alternativasDe(int dia, int indice) const;
     bool cambiarEjercicio(int dia, int indice, const std::string& nuevo);
+    bool eliminarEjercicio(int dia, int indice);
     bool deshacerCambio();
     bool hayCambiosParaDeshacer() const { return !m_historialCambios.vacia(); }
 
